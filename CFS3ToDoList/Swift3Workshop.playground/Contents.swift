@@ -187,29 +187,53 @@ if let surveyAnswer = surveyAnswer{
 //-----LAB-2-----//
 
 
-//Classes and Structs
+// Classes and Structs \\
 
 
 
-//Protocols
+// Protocols \\
 
 
 
-//Inheritance
+// Inheritance \\
 
 
 
-//Extensions
+// Extensions \\
 
 
 
-//Functions
+// Functions \\
 
 
 
-//Closures
+// Closures \\
 
 
 
+
+//// Code Challenges \\\\
+
+/*
+ 
+Create a function that takes in an array of Int's, loops through them, and returns a sum of all the numbers as an Int.
+ 
+*/
+
+
+
+/*
+ 
+Create a function that takes in a String and checks if it is a palindrome and returns a Bool(True or False).
+ 
+*/
+
+
+
+/*
+ 
+Create a new class of your choice that conforms to the DogYears protocol, but changes the default implementation. 
+ 
+*/
 
 
