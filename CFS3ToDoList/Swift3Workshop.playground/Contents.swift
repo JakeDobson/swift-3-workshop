@@ -220,7 +220,14 @@ Create a function that takes in an array of Int's, loops through them, and retur
  
 */
 
-
+func arr(arrOfInts: [Int]) -> Int {
+    var sum = 0
+    for ints in arrOfInts {
+        sum += ints
+    }
+    return sum
+}
+arr(arrOfInts: [24, 48, 100])
 
 /*
  
@@ -228,12 +235,37 @@ Create a function that takes in a String and checks if it is a palindrome and re
  
 */
 
-
+func str(x: String) -> Bool {
+    var reverse = ""
+    for char in x.characters {
+        reverse.append(char)
+        print(reverse)
+        print(x)
+    }
+    if reverse == x {
+        return true
+    } else {
+        return false
+    }
+}
 
 /*
  
 Create a new class of your choice that conforms to the DogYears protocol, but changes the default implementation. 
  
 */
+
+Class CatYears: DogYears {
+    
+}
+
+
+
+
+
+
+
+
+
 
 
