@@ -189,27 +189,97 @@ if let surveyAnswer = surveyAnswer{
 
 // Classes and Structs \\
 
+struct screenLocation {
+    var x: Int
+    var y: Int
+}
+let location = screenLocation(x: 0, y: 0)
+var location2 = location
+location2.x = 10
+location2.x
+location.x
 
+class Person {
+    var name: String
+    var age: Int
+    
+    init(name: String, age: Int = 0) {
+        self.name = name
+        self.age = age
+    }
+}
+
+let myPerson = Person(name: "Jake", age: 25)
+let myFriend = Person(name: "Tanner")
+var otherPerson = myPerson
+otherPerson.age = 100
+myPerson.age
 
 // Protocols \\
 
+protocol DogYears {
+    var age: Int { set get }
+    
+    func ageInDogYears() -> Int
+}
 
+extension DogYears {
+    func ageInDogYears() -> Int {
+        return age * 7
+    }
+}
+
+class Dog: DogYears {
+    var age = 1
+}
 
 // Inheritance \\
 
-
+class Student: Person, DogYears {
+    var studentId: String?
+    var classNumber: Int?
+}
+let student1 = Student(name: "Mike")
+student1.classNumber = 401
+student1.studentId = "23453jf43"
 
 // Extensions \\
 
-
+extension String {
+    func length() -> Int {
+        return self.characters.count
+    }
+}
+let myString = "This is a test string"
+myString.length()
 
 // Functions \\
 
+func greet(person: String = "Errbody") -> String {
+    let greeting = "Hello, " + person + "!"
+    return greeting
+}
+greet(person: "Jake")
+greet()
 
+func addThese(numbers: Int...) -> Int {
+    var total = 0
+    
+    for number in numbers {
+        total += number
+    }
+    return total
+}
+addThese(numbers: 0, 1, 2, 3, 4, 5)
 
 // Closures \\
 
-
+func changeStuff(number: Int, callback: (Int) -> ()) {
+    callback(number * number)
+}
+changeStuff(number: 10) { (results) in
+    
+}
 
 
 //// Code Challenges \\\\
@@ -237,8 +307,10 @@ Create a function that takes in a String and checks if it is a palindrome and re
 
 func str(x: String) -> Bool {
     var reverse = ""
+    print(x.characters)
     for char in x.characters {
-        reverse.append(char)
+        print(char)
+        reverse.insert(char, at: reverse.startIndex)
         print(reverse)
         print(x)
     }
@@ -248,6 +320,8 @@ func str(x: String) -> Bool {
         return false
     }
 }
+str(x: "racecar")
+str(x: "hockey")
 
 /*
  
@@ -255,10 +329,14 @@ Create a new class of your choice that conforms to the DogYears protocol, but ch
  
 */
 
-Class CatYears: DogYears {
-    
-}
+class CatYears: DogYears {
+    var age = 10
 
+    func ageInDogYears() -> Int {
+        print(age * 7)
+        return age * 7
+    }
+}
 
 
 
